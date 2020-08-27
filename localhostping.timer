@@ -1,0 +1,9 @@
+[Unit]
+Description=Run localhostping every morning
+
+[Timer]
+Unit=localhostping.service
+OnCalendar=*-*-* 09:02:00
+
+[Install]
+WantedBy=timers.target

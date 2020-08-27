@@ -1,0 +1,12 @@
+[Unit]
+Description=Run localhostping
+
+[Service]
+Type=oneshot
+Environment=LHP_PATH=trigger/birthdays
+Environment=LHP_PORT=3000
+Environment=LHP_METHOD=POST
+WorkingDirectory=/home/jedinja/.localhostping
+ExecStart=localhostping
+User=jedinja
+Group=jedinja
