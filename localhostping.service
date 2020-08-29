@@ -8,6 +8,6 @@ Environment=LHP_PORT=3000
 Environment=LHP_METHOD=POST
 Environment=LHP_BODY={}
 WorkingDirectory=/home/jedinja/.localhostping
-ExecStart=localhostping
+ExecStart=/home/jedinja/.localhostping/localhostping
 User=jedinja
 Group=jedinja
