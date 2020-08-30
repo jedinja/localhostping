@@ -12,7 +12,7 @@ let main argv =
     
     printf "ENV: %s %s %s %s" method port path body
     
-    let req = HttpWebRequest.Create(Uri(sprintf "http://localhost:%s/%s" port path))
+    let req = HttpWebRequest.Create(Uri(sprintf "https://localhost:%s/%s" port path))
     req.Method <- method
     req.ContentLength <- postBytes.LongLength
     req.ContentType <- "application/json"
