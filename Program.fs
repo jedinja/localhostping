@@ -8,9 +8,10 @@ let main argv =
     let port = Environment.GetEnvironmentVariable("LHP_PORT")
     let path = Environment.GetEnvironmentVariable("LHP_PATH")
     let body = Environment.GetEnvironmentVariable("LHP_BODY")
-
     let postBytes = body |> System.Text.Encoding.ASCII.GetBytes
-
+    
+    printf "ENV: %s %s %s %s" method port path body
+    
     let req = HttpWebRequest.Create(Uri(sprintf "http://localhost:%s/%s" port path))
     req.Method <- method
     req.ContentLength <- postBytes.LongLength
@@ -18,5 +19,9 @@ let main argv =
     use reqStr = req.GetRequestStream()
     reqStr.Write(postBytes, 0, postBytes.Length)
 
+    printf "After request stream"
+    
     use resp = req.GetResponse()
+    printf "After resp stream"
+    
     0
