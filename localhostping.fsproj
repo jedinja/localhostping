@@ -7,7 +7,7 @@
 
     <ItemGroup>
         <Compile Include="Program.fs" />
-        <Content Include="localhostpipng.service" />
+        <Content Include="localhostping.service" />
         <Content Include="localhostping.timer" />
     </ItemGroup>
 
