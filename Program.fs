@@ -23,9 +23,13 @@ let main argv =
     match certPath with
     | null | "" -> ()
     | fileName ->
-        new X509Certificate2(File.ReadAllBytes fileName)
-        |> req.ClientCertificates.Add
-        |> ignore
+        let certificates = X509Certificate2Collection()
+        certificates.Import fileName
+        req.ClientCertificates <- certificates
+
+//        new X509Certificate2(File.ReadAllBytes fileName)
+//        |> req.ClientCertificates.Add
+//        |> ignore
 
     use reqStr = req.GetRequestStream()
     reqStr.Write(postBytes, 0, postBytes.Length)
