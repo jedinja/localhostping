@@ -1,4 +1,4 @@
-cp /home/jedinja/deploy/localhostping/bin/Debug/netcoreapp3.1/localhostping /home/jedinja/.localhostping
-cp /home/jedinja/deploy/localhostping/bin/Debug/netcoreapp3.1/localhostping.dll /home/jedinja/.localhostping
-cp /home/jedinja/deploy/localhostping/bin/Debug/netcoreapp3.1/localhostping.runtimeconfig.json /home/jedinja/.localhostping
-cp /home/jedinja/deploy/localhostping/bin/Debug/netcoreapp3.1/FSharp.Core.dll /home/jedinja/.localhostping
+cp ./bin/Debug/netcoreapp3.1/localhostping $1
+cp ./bin/Debug/netcoreapp3.1/localhostping.dll $1
+cp ./bin/Debug/netcoreapp3.1/localhostping.runtimeconfig.json $1
+cp ./bin/Debug/netcoreapp3.1/FSharp.Core.dll $1
