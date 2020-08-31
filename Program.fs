@@ -1,7 +1,10 @@
 ﻿open System
-open System.IO
 open System.Net
+open System.Net.Security
 open System.Security.Cryptography.X509Certificates
+
+let skipValidation s cert chain err = true
+let skipValidationDelegate = RemoteCertificateValidationCallback(skipValidation)
 
 [<EntryPoint>]
 let main argv =
@@ -26,6 +29,7 @@ let main argv =
         let certificates = X509Certificate2Collection()
         certificates.Import fileName
         req.ClientCertificates <- certificates
+        req.ServerCertificateValidationCallback <- skipValidationDelegate
 
 //        new X509Certificate2(File.ReadAllBytes fileName)
 //        |> req.ClientCertificates.Add
